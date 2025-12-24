@@ -28,7 +28,7 @@ Purpose: Give AI coding agents the minimal, actionable context to be productive 
 ## Data & integration patterns
 
 - Local state: the app currently stores items in component state (see `app/index.tsx`).
-- Export: Excel export uses `xlsx` to build a workbook, `expo-file-system` to write to `FileSystem.cacheDirectory`, and `expo-sharing` to share. Note: `app/index.tsx` warns about a known high-severity vulnerability in `xlsx` — treat dependency updates with care and run `npm audit` or evaluate replacement libraries.
+- Export: Excel export uses `xlsx` to build a workbook, `expo-file-system` to write to persistent storage, and `expo-sharing` to share. **On Android the app saves files to the device Downloads folder (e.g. `/storage/emulated/0/Download/items_<timestamp>.xlsx`) and requests the `WRITE_EXTERNAL_STORAGE` permission at runtime.** The implementation writes to a `file://` URI and may fail on newer Android versions where scoped storage applies — if writes fail, prefer using Android's Storage Access Framework (SAF) or present a directory picker. Note: `app/index.tsx` warns about a known high-severity vulnerability in `xlsx` — treat dependency updates with care and run `npm audit` or evaluate replacement libraries.
 - Native features: Camera and barcode scanner dependencies are present (`expo-camera`, `expo-barcode-scanner`), so scanning flows should request permissions and use Expo APIs.
 
 ## Development & debugging workflows

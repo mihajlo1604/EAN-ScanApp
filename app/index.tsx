@@ -4,7 +4,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as XLSX from 'xlsx';
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import * as Sharing from 'expo-sharing';
 
 interface Item {

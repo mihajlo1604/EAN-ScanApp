@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert, Text, View } from 'react-native';
-import { Menu, MenuOptions, MenuOption, MenuTrigger } from '@react-native-menu/menu';
+import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 

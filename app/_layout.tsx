@@ -2,7 +2,7 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
-import { MenuProvider } from '@react-native-menu/menu';
+import { MenuProvider } from 'react-native-popup-menu';
 import ThreeDotMenu from '@/components/three-dot-menu';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
